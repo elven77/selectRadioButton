@@ -7,7 +7,7 @@ class TablePages(basePages.BasePage):
     def getColumnNum(self):
         table = self.driver.find_element(*Table.elemTable)
         tr = table.find_elements_by_tag_name("tr")
-        colNum=(len(tr[0].find_elements_by_tag_name("th")))
+        colNum=(len(tr[0].find_elements_by_tag_name("td")))
         print("Column number is: ")
         print(colNum)
 
