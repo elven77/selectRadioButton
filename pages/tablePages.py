@@ -24,8 +24,7 @@ class TablePages(basePages.BasePage):
         print "\nEntire Table :\n***\n" + table.text + "\n***\n"
 
         for i,tr in enumerate(table.find_elements_by_tag_name("tr")):
-            #print("TR is :")
-            #print(tr.text)
+            #print "TR is :" + tr.text
 
             for td in tr.find_elements_by_tag_name("td"): ### Search for TD tag
                 #print(td.text) ### Print cell value
@@ -37,7 +36,8 @@ class TablePages(basePages.BasePage):
                     print tr.text
                     elemRadio.click()
                     print firstname+" has been selected."
-                    break
+                    #break
+                    return # In for cycle, use "return" is better than "break"
 
             #else:
                 #print ("No TD. May be TH row OR Empty Row")
